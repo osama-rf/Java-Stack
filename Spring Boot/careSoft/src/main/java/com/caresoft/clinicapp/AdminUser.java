@@ -7,6 +7,8 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
 
     public AdminUser(Integer id, String companion) {
         super(id);
+        securityIncidents = new ArrayList<String>();
+
     }
 
     //... imports class definition...

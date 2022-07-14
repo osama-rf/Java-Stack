@@ -7,6 +7,7 @@ public class Physician extends User implements HIPAACompliantUser {
 
     public Physician(Integer id) {
         super(id);
+        patientNotes = new ArrayList<String>();
     }
     //... imports class definition...
 
