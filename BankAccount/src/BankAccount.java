@@ -7,7 +7,6 @@ public class BankAccount {
 
     public BankAccount(){
         numberOfAccounts ++;
-
     }
 
     public void setSaving_balance(double saving_balance) {
