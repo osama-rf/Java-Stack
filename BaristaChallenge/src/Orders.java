@@ -23,12 +23,13 @@ public class Orders {
         this.items.add(items1);
     }
 
-    public void getStatusMessage(){
-        if(this.ready){
+    public boolean getStatusMessage(){
+        if(this.ready == true){
             System.out.println("Your order is ready.");
         } else {
             System.out.println("Thank you for waiting. Your order will be ready soon.");
         }
+        return false;
     }
 
 //    public double getOrderTotal(){
@@ -46,11 +47,15 @@ public class Orders {
         return sum;
     }
 
-    public void displayMenu(ArrayList<String> menuItem){
-        for (int i = 0; i < menuItem.size(); i++){
-            System.out.println(i + " "+ menuItem.get(i));
+    public void display(){
+        System.out.printf("Customer Name: %s", this.name);
+        for(Items i: this.items) {
+            System.out.println(i.getName() + " - $" + i.getPrice());
         }
+        System.out.println("Total: $" + this.getOrderTotal());
     }
+
+
 
 
 
