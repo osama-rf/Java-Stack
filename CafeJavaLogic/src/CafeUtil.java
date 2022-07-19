@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class CafeUtil {
     public int getStreakGoal(){
         int sum = 0;
@@ -24,7 +26,9 @@ public class CafeUtil {
 
     public void addCustomer(ArrayList<String> customers){
         System.out.println("Please enter your name");
-        String userName = System.console().readLine();
+        Scanner sc = new Scanner(System.in);
+        String userName = "";
+        userName = sc.next();
         System.out.println(String.format("Hello, %s!", userName));
         System.out.println(String.format("There are %s people in front of you", customers.size()));
         customers.add(userName);

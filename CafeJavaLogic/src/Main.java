@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import  java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,5 +19,8 @@ public class Main {
         customers.add("Osama");
         customers.add("Aymen");
         customers.add("Anas");
+
+        CafeUtil addOrder = new CafeUtil();
+        addOrder.addCustomer(customers);
     }
 }
