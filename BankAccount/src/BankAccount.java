@@ -37,7 +37,7 @@ public class BankAccount {
     }
 
     public void withdrawCheck(int amount){
-        if(amount > totalAmount){
+        if(amount > checking_balance){
             setChecking_balance(-amount);
         } else {
             System.out.println("From Where");
