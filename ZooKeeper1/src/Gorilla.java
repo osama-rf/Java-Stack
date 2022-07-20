@@ -20,4 +20,9 @@ public class Gorilla extends Mammal{
         setEnergyLevel(tired);
         System.out.println("The gorilla has climbed a tree and decrease its energy to: " + tired);
     }
+
+    @Override
+    public int displayEnergy() {
+        return super.displayEnergy();
+    }
 }

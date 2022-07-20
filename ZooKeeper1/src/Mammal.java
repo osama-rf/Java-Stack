@@ -12,6 +12,11 @@ public class Mammal {
     public Mammal(){
         this.energyLevel = 100;
     }
+
+    public int displayEnergy(){
+        System.out.println("The total energy level is: " + energyLevel);
+        return energyLevel;
+    }
 }
 
 
