@@ -8,11 +8,11 @@
         <version>2.7.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hoppers</groupId>
-    <artifactId>Hoppers</artifactId>
+    <groupId>com.osama</groupId>
+    <artifactId>DisplayDate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Hoppers</name>
-    <description>Hoppers</description>
+    <name>DisplayDate</name>
+    <description>DisplayDate</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -32,29 +32,10 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-        </dependency>
-
-        <!-- webjars locator dependency enables auto-detection of the version, so your .jsp
-       file links are version-agnostic in case you update the versions here in your pom later -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
-            <version>0.30</version>
-        </dependency>
-
-        <!-- BOOTSTRAP DEPENDENCIES -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>5.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>3.6.0</version>
         </dependency>
 
     </dependencies>
