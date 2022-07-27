@@ -26,6 +26,7 @@
                         <th scope="col">Expense</th>
                         <th scope="col">Vendor</th>
                         <th scope="col">Amount</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +35,7 @@
                         <td><c:out value="${x.expenseName}" /></td>
                         <td><c:out value="${x.vendor}" /></td>
                         <td><c:out value="${x.amount}" /></td>
+                        <td><a href="/expense/edit/${x.id}">edit</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -41,7 +43,7 @@
             <hr>
         
 
-            <h1>New Book</h1>
+            <h1>Track an expense</h1>
     <form:form action="/expense" method="post" modelAttribute="expense">
         <p>
             <form:label path="expenseName">Expense Name: </form:label>

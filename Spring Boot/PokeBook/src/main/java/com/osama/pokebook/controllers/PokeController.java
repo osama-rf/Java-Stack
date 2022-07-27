@@ -37,4 +37,27 @@ public class PokeController {
             return "redirect:/expense";
         }
     }
+
+    @RequestMapping("/expense/edit/{id}")
+    public String edit(@PathVariable("id") Long id, Model model){
+        Expense expense = expenseService.findExpense(id);
+        model.addAttribute("expens", expense);
+        return "edit.jsp";
+    }
+
+    @RequestMapping(value = "/expense/edit/{id}", method = RequestMethod.PUT)
+    public String updateExpense(@Valid @ModelAttribute("expense") Expense expense, @PathVariable("id") Long id, BindingResult result){
+        if (result.hasErrors()){
+            return "edit.jsp";
+        } else {
+            expenseService.updateExpense(expense, id);
+            return "redirect:/expense";
+        }
+    }
+
+//    @RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
+//    public String delete(@PathVariable("id") Long id) {
+//        expenseService.deleteExpense(id);
+//        return "redirect:/expense";
+//    }
 }
