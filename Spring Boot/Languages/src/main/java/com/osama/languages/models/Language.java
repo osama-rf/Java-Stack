@@ -1,13 +1,14 @@
 package com.osama.languages.models;
 
 
-import com.sun.istack.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.*;
 import java.util.Date;
 
+@Table(name = "languages")
 @Entity
 
 public class Language {
@@ -18,7 +19,7 @@ public class Language {
 
     @NotNull
     @Size(min = 2, max = 20)
-    private String languageName;
+    private String name;
 
     @NotNull
     @Size(min = 2, max = 20)
@@ -37,7 +38,7 @@ public class Language {
 
     public Language(){}
     public Language(String name, String creator, double currentVersion){
-        this.languageName = name;
+        this.name = name;
         this.creator = creator;
         this.currentVersion = currentVersion;
     }
@@ -47,11 +48,11 @@ public class Language {
     }
 
     public String getName() {
-        return languageName;
+        return name;
     }
 
     public void setName(String name) {
-        this.languageName = name;
+        this.name = name;
     }
 
     public String getCreator() {
@@ -80,5 +81,3 @@ public class Language {
         this.updatedAt = new Date();
     }
 }
-
-

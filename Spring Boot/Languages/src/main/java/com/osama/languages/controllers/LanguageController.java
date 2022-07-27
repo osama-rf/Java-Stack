@@ -19,7 +19,7 @@ public class LanguageController {
     LanguageService languageService;
 
     @RequestMapping("/dashboard")
-    public String newLanguage(Model model, @ModelAttribute("lang")Language language){
+    public String newLanguage(Model model, @ModelAttribute("languages")Language language){
         List<Language> languages = languageService.allLanguages();
         model.addAttribute("languages", languages);
         return "index.jsp";
@@ -27,7 +27,7 @@ public class LanguageController {
 
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
-    public String addLanguage(@Valid @ModelAttribute("lang")Language language, BindingResult result){
+    public String addLanguage(@Valid @ModelAttribute("languages")Language language, BindingResult result){
         if (result.hasErrors()){
             return "index.jsp";
         } else {
@@ -39,7 +39,7 @@ public class LanguageController {
     @GetMapping("/dashboard/show/{id}")
     public String showLanguage(Model model, @PathVariable("id") Long id){
         Language language = languageService.findLanguage(id);
-        model.addAttribute("language", language);
+        model.addAttribute("languages", language);
         return "show.jsp";
     }
 }

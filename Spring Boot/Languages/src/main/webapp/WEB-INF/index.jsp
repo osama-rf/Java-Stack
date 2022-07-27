@@ -65,7 +65,7 @@
     <p>
         <form:label path="currentVersion">Amount: </form:label>
         <form:errors path="currentVersion" />
-        <form:input type="currentVersion" path="currentVersion" />
+        <form:input type="number" path="currentVersion" />
     </p>
     <input type="submit" value="Submit" />
 </form:form>
