@@ -23,8 +23,8 @@
                 <body>
 
                         <h1>Edit Item</h1>                
-                    <form:form action="/expense${expense.id}" method="post" modelAttribute="expens">
-                        <input type="hidden" name="_method" value="put">
+                    <form:form action="/expense/${expense.id}/submit" method="POST" modelAttribute="expense">
+                        <input type="hidden" name="_method" value="PUT">
                         <p>
                             <form:label path="expenseName">Expense Name: </form:label>
                             <form:errors path="expenseName" />
@@ -45,7 +45,8 @@
                             <form:errors path="description" />
                             <form:textarea path="description" />
                         </p>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit"  />
+
                         <a href="/expense">Go back</a>
                     </form:form>
                     <!-- Bootstrap JavaScript Libraries -->

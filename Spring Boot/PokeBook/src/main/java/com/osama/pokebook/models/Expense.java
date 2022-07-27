@@ -93,7 +93,3 @@ public class Expense {
         this.updatedAt = new Date();
     }
 }
-
-//vnedor
-//amount
-//description
