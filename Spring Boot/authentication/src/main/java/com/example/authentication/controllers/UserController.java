@@ -1,19 +1,20 @@
 package com.example.authentication.controllers;
 
+import com.example.authentication.models.Book;
 import com.example.authentication.models.LoginUser;
 import com.example.authentication.models.User;
+import com.example.authentication.services.BookService;
 import com.example.authentication.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -37,8 +38,10 @@ public class UserController {
             return "index.jsp";
         }
         session.setAttribute("user_id", newUser.getId());
-        return "redirect:/home";
+        return "redirect:/book";
     }
+
+    // End Of Registration
 
     // Login
     @PostMapping("/login")
@@ -49,20 +52,22 @@ public class UserController {
             return "index.jsp";
         }
         session.setAttribute("user_id", user.getId());
-        return "redirect:/home";
+        return "redirect:/book";
     }
 
-    @GetMapping("/home")
-    public String home(Model model, HttpSession session){
-        Long user_id = (Long) session.getAttribute("user_id");
-        if (user_id != null){
-            User user = userService.findUserById(user_id);
-            model.addAttribute("user", user);
-            return "home.jsp";
-        }else {
-            return "redirect:/";
-        }
-    }
+//    @GetMapping("/book")
+//    public String home(Model model, HttpSession session){
+//        Long user_id = (Long) session.getAttribute("user_id");
+//        if (user_id != null){
+//            User user = userService.findUserById(user_id);
+//            model.addAttribute("user", user);
+//            return "home.jsp";
+//        }else {
+//            return "redirect:/";
+//        }
+//    }
+
+    // End Of Login //
 
     @GetMapping("/logout")
     public String logout(HttpSession session){

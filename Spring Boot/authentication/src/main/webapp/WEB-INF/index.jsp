@@ -11,6 +11,8 @@
     <title>Login and Registration</title>
 </head>
 <body>
+<h1>Book Club</h1>
+<h3>A place for friends to share thoughts on books.</h3>
 <form:form action="/register" method="post" modelAttribute="newUser">
     <div class="form-group">
         <label>User Name:</label>
