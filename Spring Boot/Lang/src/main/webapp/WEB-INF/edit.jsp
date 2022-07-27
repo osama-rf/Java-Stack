@@ -7,7 +7,7 @@
 
                 <head>
                     <title>
-                        <c:out value="${language.name}">
+                        <c:out value="${language.name}"/>
                     </title>
                     <!-- Required meta tags -->
                     <meta charset="utf-8">
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="container-fluid">
-                            <c:if test="${!errors.isEmpty()}">
+                            <c:if test="${!errors.isEmpty()}" >
                                 <c:forEach var="error" items="${errors}">
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         <strong>
