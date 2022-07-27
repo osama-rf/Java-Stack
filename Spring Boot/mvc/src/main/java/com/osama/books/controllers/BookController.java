@@ -5,10 +5,10 @@ import com.osama.books.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -28,5 +28,19 @@ public class BookController {
         List<Book> books = bookService.allBooks();
         model.addAttribute("books", books);
         return "/books/index.jsp";
+    }
+
+    @RequestMapping("/books/new")
+    public String newBook(@ModelAttribute("book") Book book) {
+        return "/books/new.jsp";
+    }
+    @RequestMapping(value="/books", method= RequestMethod.POST)
+    public String create(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/books/new.jsp";
+        } else {
+            bookService.createBook(book);
+            return "redirect:/books";
+        }
     }
 }

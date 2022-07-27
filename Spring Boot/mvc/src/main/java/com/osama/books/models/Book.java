@@ -19,10 +19,11 @@ public class Book {
     @Size(min = 5, max = 200)
     private String description;
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Language must be at least 3 characters.")
     private String language;
+    // NEW
     @NotNull
-    @Min(100)
+    @Min(value=100, message="Must be at least 100 pages.")
     private Integer numberOfPages;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
@@ -102,6 +103,10 @@ public class Book {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+
+    // NEW
+
+
 
 
 }
