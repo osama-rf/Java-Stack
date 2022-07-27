@@ -31,9 +31,9 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="x" items="${language}">
+    <c:forEach var="x" items="${languages}">
         <tr>
-            <td> <a href="/dashboard/show/${x.id}"><c:out value="${x.name}" /></a></td>
+            <td> <a href="/dashboard/show/${x.id}"><c:out value="${x.languageName}" /></a></td>
             <td><c:out value="${x.creator}" /></td>
             <td><c:out value="${x.currentVersion}" /></td>
             <td><a href="/dashboard/${x.id}/edit">edit</a></td>
@@ -53,9 +53,9 @@
 <h1>Add Language</h1>
 <form:form action="/dashboard" method="post" modelAttribute="languages">
     <p>
-        <form:label path="name">Expense Name: </form:label>
-        <form:errors path="name" />
-        <form:input path="name" />
+        <form:label path="languageName">Expense Name: </form:label>
+        <form:errors path="languageName" />
+        <form:input path="languageName" />
     </p>
     <p>
         <form:label path="creator">Vendor:</form:label>
